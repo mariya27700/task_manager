@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Task Manager Web App</title>
+        <style>
+           body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 20px;
+}
+
+.tm {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.todo, .inprogress, .done {
+    background-color: #f9f9f9;
+    padding: 15px;
+    width: 220px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+input.inp {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.add label,
+.todo p,
+.inprogress p,
+.done p {
+    display: block;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: grab;
+    position: relative;
+}
+
+.add label button,
+.todo p button,
+.inprogress p button,
+.done p button {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+           
+        </style>
+    </head>
+    <body>
+        <h1 class="tm"> Task Manager Web App</h1>
+        <input class="inp" type="text" >
+            <button onclick="add()">Add to TO DO</button>
+        <div class="main">
+            
+         <div class="todo" draggable="true">
+            <h3>TO DO</h3>
+      <div class="add"></div>
+      <p draggable="true">Design homepage 
+        <button onclick="this.parentElement.remove()">🗑</button>
+      </p>
+      <p draggable="true">Add style 
+        <button onclick="this.parentElement.remove()">🗑</button>
+      </p>
+    </div>
+    <div class="inprogress">
+      <h3>In Progress</h3>
+      <p draggable="true">Continue with remaining code 
+        <button onclick="this.parentElement.remove()">🗑</button>
+      </p>
+    </div>
+    <div class="done">
+      <h3>Done</h3>
+      <p draggable="true">Complete backend 
+        <button onclick="this.parentElement.remove()">🗑</button>
+      </p>
+         </div>
+         </div>
+
+
+
+         <script src="script.js"></script>
+    </body>
+</html>
